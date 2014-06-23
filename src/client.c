@@ -25,7 +25,7 @@ void Logout() {
     ClientEnv* env = &clientEnv;
     Protocol protocol;
     protocol.pid = getpid();
-    sprintf(protocol.msg, "OUT %s\n", clientEnv.username);
+    sprintf(protocol.msg, "OUT %s\n", env->username);
     write(env->serverFd, &protocol, sizeof(Protocol));
 }
  
